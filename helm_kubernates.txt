@@ -1,2 +1,6 @@
 brew install helm
 
+
+
+kubectl apply -f https://raw.githubusercontent.com/airscholar/Kubernetes-For-DataEngineering/main/k8s/recommended-dashboard.yaml
+
