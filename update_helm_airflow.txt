@@ -1,0 +1,29 @@
+(common_workspace) welcome@jaisairams-Laptop DataEngineer_Kubernates % helm upgrade --install airflow apache-airflow/airflow --namespace airflow --create-namespace -f value.yaml
+Release "airflow" has been upgraded. Happy Helming!
+NAME: airflow
+LAST DEPLOYED: Sun Feb 11 00:03:48 2024
+NAMESPACE: airflow
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+NOTES:
+Thank you for installing Apache Airflow 2.7.1!
+
+Your release is named airflow.
+You can now access your dashboard(s) by executing the following command(s) and visiting the corresponding port at localhost in your browser:
+
+Airflow Webserver:     kubectl port-forward svc/airflow-webserver 8080:8080 --namespace airflow
+Default Webserver (Airflow UI) Login credentials:
+    username: admin
+    password: admin
+Default Postgres connection credentials:
+    username: postgres
+    password: postgres
+    port: 5432
+
+You can get Fernet Key value by running the following:
+
+    echo Fernet Key: $(kubectl get secret --namespace airflow airflow-fernet-key -o jsonpath="{.data.fernet-key}" | base64 --decode)
+(common_workspace) welcome@jaisairams-Laptop DataEngineer_Kubernates % echo Fernet Key: $(kubectl get secret --namespace airflow airflow-fernet-key -o jsonpath="{.data.fernet-key}" | base64 --decode)
+Fernet Key: UVF2c0Q4b3NqTmRrTEhjRTE0UjZTTmNmMlZ4TXhhaXk=
+(common_workspace) welcome@jaisairams-Laptop DataEngineer_Kubernates %
